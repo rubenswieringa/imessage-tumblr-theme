@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="
+  {block:Dutch}nl{/block:Dutch}
+  {block:English}en{/block:English}
+  {block:French}fr{/block:French}
+  {block:German}de{/block:German}
+  {block:Italian}it{/block:Italian}
+  {block:Japanese}ja{/block:Japanese}
+  {block:Korean}ko{/block:Korean}
+  {block:Polish}pl{/block:Polish}
+  {block:PortugueseBR}pt-br{/block:PortugueseBR}
+  {block:PortuguesePT}pt{/block:PortuguesePT}
+  {block:Russian}ru{/block:Russian}
+  {block:Spanish}es{/block:Spanish}
+  {block:Turkish}tr{/block:Turkish}
+">
+
+<head>
+
+  <!-- CUSTOM SETTINGS -->
+
+  <meta name="if:Infinite Scrolling" content="1">
+  <meta name="if:GoogleAnalytics" content="0">
+  <meta name="if:GoogleSiteVerification" content="0">
+
+  <meta name="text:GoogleAnalyticsID" content="UA-XXXXXXXX-X">
+  <meta name="text:GoogleSiteVerification" content="Google Verification Key">
+
+  <meta name="if:Show Social" content="1">
+  <meta name="text:Disqus Shortname" content="">
+  <meta name="text:Email" content="">
+  <meta name="text:Behance" content="">
+  <meta name="text:Codepen" content="">
+  <meta name="text:Dribbble" content="">
+  <meta name="text:Facebook" content="">
+  <meta name="text:Flickr" content="">
+  <meta name="text:Github" content="">
+  <meta name="text:Google Plus" content="">
+  <meta name="text:Instagram" content="">
+  <meta name="text:LinkedIn" content="">
+  <meta name="text:Pinterest" content="">
+  <meta name="text:Reddit" content="">
+  <meta name="text:Skype" content="">
+  <meta name="text:Soundcloud" content="">
+  <meta name="text:Twitter" content="">
+  <meta name="text:Vimeo" content="">
+  <meta name="text:Xing" content="">
+  <meta name="text:YouTube" content="">
+
+  <meta name="font:Headings" content="Open+Sans">
+  <meta name="font:Body" content="Open+Sans">
+  <meta name="select:FontBody" content="serif">
+  <meta name="select:FontBody" content="sans-serif">
+  <meta name="text:FontSize" content="1em">
+  <meta name="text:FontWeight" content="400">
+  <meta name="text:LineHeight" content="1.5em">
+
+  <meta name="color:Color" content="#777">
+  <meta name="color:Background" content="#fafafa">
+  <meta name="color:Headings" content="#121212">
+  <meta name="color:Primary" content="#3f8ac8">
+  <meta name="color:PrimaryHover" content="#2f70a5">
+  <meta name="color:Secondary" content="#ff0000">
+  <meta name="color:SecondaryHover" content="#ff0000">
+  <meta name="color:Border" content="#eaeaea">
+  <meta name="color:PostBackground" content="#fff">
+  <meta name="color:Header" content="#777">
+  <meta name="color:HeaderBackground" content="#fafafa">
+  <meta name="color:Footer" content="#fafafa">
+  <meta name="color:FooterBackground" content="#282828">
+
+  <meta name="if:Masonry Layout" content="0">
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>
+
+  {block:IndexPage}
+
+    {Title} | {PlaintextDescription}
+
+  {/block:IndexPage}
+
+  {block:PermalinkPage}
+
+    {block:PostSummary}
+
+      {Title} | {PlaintextPostSummary}
+
+    {/block:PostSummary}
+
+  {block:PermalinkPage}
+
+  {block:SearchPage}
+
+    {Title} | {lang:Search results for SearchQuery}
+
+  {/block:SearchPage}
+
+  </title>
+
+  {block:Description}
+
+    <meta name="description" content="{MetaDescription}">
+
+  {/block:Description}
+
+  {block:GoogleSiteVerification}
+
+    <meta name="google-site-verification" content="{text:GoogleSiteVerification}">
+
+  {/block:GoogleSiteVerification}
+
+  <meta name="apple-mobile-web-app-title" content="{Title}">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+
+  <!-- ## THEME COLOR -->
+
+  <meta name="theme-color" content="#fff">
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family={font:Headings}">
+  <style>html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  font: inherit;
+  font-size: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: '';
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+fieldset {
+  min-width: 0;
+}
+
+mark {
+  background-color: transparent;
+}
+
+body {
+  font-family: "Helvetica Neue", "arial", Arial, sans-serif;
+}
+
+.comp-battery {
+  color: black;
+  border-color: currentColor;
+  width: 30px;
+  height: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 2px;
+  position: relative;
+  overflow: visible;
+}
+.comp-battery:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  bottom: 1px;
+  background-color: black;
+  /*#0e0;*/
+  transform-origin: left;
+  transform: scale(0.5, 1);
+}
+.comp-battery:after {
+  content: '';
+  display: block;
+  height: 6px;
+  margin-top: -3px;
+  margin-left: 2px;
+  top: 50%;
+  position: absolute;
+  left: 100%;
+  width: 2px;
+  background-color: currentColor;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.comp-post-date {
+  display: block;
+  text-align: center;
+}
+
+.comp-post-status {
+  display: block;
+}
+
+.mod-post {
+  background-color: #0a80f9;
+  background-image: linear-gradient(to top, #0a80f9, #1a8ef9);
+  border-radius: 17px;
+  color: white;
+  overflow: visible;
+  position: relative;
+}
+.mod-post:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  right: -6px;
+  bottom: 0;
+  background-size: auto auto;
+  background-image: url(http://static.rubenswieringa.com/tumblr/imessage-pointer.svg);
+  background-repeat: no-repeat;
+}
+.mod-post > .mod-post-body {
+  border-radius: inherit;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* autoprefixer: off */
+@supports ((mask-border: url(http://static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch) or (-webkit-mask-box-image: url(http://static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch)) and (-webkit-appearance: none) and (text-align-last: auto) and (not (-ms-accelerator: true)) {
+  .mod-post {
+    /* autoprefixer: on */
+    border-radius: 0;
+    -webkit-mask-box-image: url(http://static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch;
+            mask-border: url(http://static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#0a80f9), to(#51bffa));
+    background-image: linear-gradient(to top, #0a80f9, #51bffa);
+    background-attachment: fixed;
+  }
+  .mod-post:before {
+    content: none;
+  }
+  .mod-post > .mod-post-body {
+    border-bottom-right-radius: 0;
+  }
+}
+@supports (mask-border: url(http://static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch) or (-webkit-mask-box-image: url(http://static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch) {
+  _:-webkit-full-screen:not(:root:root),
+  .mod-post {
+    /* autoprefixer: on */
+    border-radius: 0;
+    -webkit-mask-box-image: url(http://static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch;
+            mask-border: url(http://static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#0a80f9), to(#51bffa));
+    background-image: linear-gradient(to top, #0a80f9, #51bffa);
+    background-attachment: fixed;
+  }
+  _:-webkit-full-screen:not(:root:root):before,
+  .mod-post:before {
+    content: none;
+  }
+  _:-webkit-full-screen:not(:root:root) > .mod-post-body,
+  .mod-post > .mod-post-body {
+    border-bottom-right-radius: 0;
+  }
+}
+.mod-post-body.photo .image {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.mod-post-body.photoset > .html_photoset {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.mod-post-body.text .title {
+  font-size: 21px;
+}
+
+.layout-wrapper {
+  background-color: #efe;
+  margin: 0 auto;
+  padding: 0 33px 33px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.layout-post-list {
+  box-sizing: border-box;
+  max-width: 550px;
+  width: fit-content;
+}
+.layout-post-list:after {
+  display: table;
+  clear: both;
+  content: '';
+}
+.layout-post-list .mod-post {
+  float: right;
+  margin-top: 10px;
+}
+.layout-post-list .mod-post,
+.layout-post-list .comp-post-date,
+.layout-post-list .comp-post-status {
+  clear: both;
+}
+.layout-post-list .mod-post.photoset {
+  width: 100%;
+}
+.layout-post-list .comp-post-date,
+.layout-post-list .comp-post-status {
+  margin-top: 10px;
+}
+.layout-post-list .comp-post-status ~ .comp-post-status {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="1"] + .mod-post + .comp-post-status + .comp-post-date[data-date="1"],
+.layout-post-list .comp-post-date[data-date="1"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="1"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="2"] + .mod-post + .comp-post-status + .comp-post-date[data-date="2"],
+.layout-post-list .comp-post-date[data-date="2"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="2"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="3"] + .mod-post + .comp-post-status + .comp-post-date[data-date="3"],
+.layout-post-list .comp-post-date[data-date="3"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="3"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="4"] + .mod-post + .comp-post-status + .comp-post-date[data-date="4"],
+.layout-post-list .comp-post-date[data-date="4"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="4"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="5"] + .mod-post + .comp-post-status + .comp-post-date[data-date="5"],
+.layout-post-list .comp-post-date[data-date="5"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="5"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="6"] + .mod-post + .comp-post-status + .comp-post-date[data-date="6"],
+.layout-post-list .comp-post-date[data-date="6"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="6"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="7"] + .mod-post + .comp-post-status + .comp-post-date[data-date="7"],
+.layout-post-list .comp-post-date[data-date="7"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="7"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="8"] + .mod-post + .comp-post-status + .comp-post-date[data-date="8"],
+.layout-post-list .comp-post-date[data-date="8"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="8"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="9"] + .mod-post + .comp-post-status + .comp-post-date[data-date="9"],
+.layout-post-list .comp-post-date[data-date="9"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="9"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="10"] + .mod-post + .comp-post-status + .comp-post-date[data-date="10"],
+.layout-post-list .comp-post-date[data-date="10"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="10"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="11"] + .mod-post + .comp-post-status + .comp-post-date[data-date="11"],
+.layout-post-list .comp-post-date[data-date="11"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="11"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="12"] + .mod-post + .comp-post-status + .comp-post-date[data-date="12"],
+.layout-post-list .comp-post-date[data-date="12"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="12"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="13"] + .mod-post + .comp-post-status + .comp-post-date[data-date="13"],
+.layout-post-list .comp-post-date[data-date="13"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="13"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="14"] + .mod-post + .comp-post-status + .comp-post-date[data-date="14"],
+.layout-post-list .comp-post-date[data-date="14"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="14"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="15"] + .mod-post + .comp-post-status + .comp-post-date[data-date="15"],
+.layout-post-list .comp-post-date[data-date="15"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="15"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="16"] + .mod-post + .comp-post-status + .comp-post-date[data-date="16"],
+.layout-post-list .comp-post-date[data-date="16"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="16"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="17"] + .mod-post + .comp-post-status + .comp-post-date[data-date="17"],
+.layout-post-list .comp-post-date[data-date="17"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="17"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="18"] + .mod-post + .comp-post-status + .comp-post-date[data-date="18"],
+.layout-post-list .comp-post-date[data-date="18"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="18"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="19"] + .mod-post + .comp-post-status + .comp-post-date[data-date="19"],
+.layout-post-list .comp-post-date[data-date="19"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="19"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="20"] + .mod-post + .comp-post-status + .comp-post-date[data-date="20"],
+.layout-post-list .comp-post-date[data-date="20"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="20"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="21"] + .mod-post + .comp-post-status + .comp-post-date[data-date="21"],
+.layout-post-list .comp-post-date[data-date="21"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="21"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="22"] + .mod-post + .comp-post-status + .comp-post-date[data-date="22"],
+.layout-post-list .comp-post-date[data-date="22"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="22"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="23"] + .mod-post + .comp-post-status + .comp-post-date[data-date="23"],
+.layout-post-list .comp-post-date[data-date="23"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="23"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="24"] + .mod-post + .comp-post-status + .comp-post-date[data-date="24"],
+.layout-post-list .comp-post-date[data-date="24"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="24"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="25"] + .mod-post + .comp-post-status + .comp-post-date[data-date="25"],
+.layout-post-list .comp-post-date[data-date="25"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="25"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="26"] + .mod-post + .comp-post-status + .comp-post-date[data-date="26"],
+.layout-post-list .comp-post-date[data-date="26"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="26"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="27"] + .mod-post + .comp-post-status + .comp-post-date[data-date="27"],
+.layout-post-list .comp-post-date[data-date="27"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="27"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="28"] + .mod-post + .comp-post-status + .comp-post-date[data-date="28"],
+.layout-post-list .comp-post-date[data-date="28"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="28"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="29"] + .mod-post + .comp-post-status + .comp-post-date[data-date="29"],
+.layout-post-list .comp-post-date[data-date="29"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="29"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="30"] + .mod-post + .comp-post-status + .comp-post-date[data-date="30"],
+.layout-post-list .comp-post-date[data-date="30"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="30"] {
+  display: none;
+}
+.layout-post-list .comp-post-date[data-date="31"] + .mod-post + .comp-post-status + .comp-post-date[data-date="31"],
+.layout-post-list .comp-post-date[data-date="31"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="31"] {
+  display: none;
+}
+
+.layout-header {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+}
+.layout-header .link,
+.layout-header .clock {
+  flex: 1 0 auto;
+}
+.layout-header .clock {
+  order: 1;
+  background-color: #8da;
+}
+.layout-header .link {
+  order: 3;
+  background-color: #fda;
+}
+.layout-header:after {
+  content: '';
+  display: block;
+  flex: 1 0 auto;
+  order: 2;
+  width: 100%;
+}
+.layout-header:before {
+  background-color: #faa;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 50%;
+  margin-left: -50vw;
+  position: absolute;
+  width: 100vw;
+  z-index: -1;
+}
+</style>
+
+  <style>
+
+    {CustomCSS}
+
+  </style>
+
+  <link rel="shortcut icon" href="{Favicon}">
+  <link rel="icon" href="{PortraitURL-128}">
+  <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+  {block:PermalinkPage}
+
+    {block:Posts}
+
+      {block:Date}
+
+        <link rel="canonical" href="{Permalink}">
+        <link rel="shortlink" href="{ShortURL}">
+
+      {/block:Date}
+
+    {/block:Posts}
+
+  {/block:PermalinkPage}
+
+  <script>
+
+function openImage ( element, event ) {
+
+  event = event || window.event;
+
+  if ( event && ( event.metaKey || event.altKey )){
+    return true;
+  }
+
+  window.parent.Tumblr.Lightbox.init([{
+    width:    element.getAttribute( 'data-photo-width-highres' ),
+    height:   element.getAttribute( 'data-photo-height-highres' ),
+    high_res: element.getAttribute( 'data-photo-url-highres' ),
+    low_res:  element.getAttribute( 'data-photo-url-lowres' )
+  }]);
+
+  return false;
+}
+
+</script>
+
+</head>
+
+
+<body itemscope="itemscope" itemtype="http://schema.org/WebPage">
+
+  <div class="layout-wrapper">
+
+    <header class="layout-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+
+  <time class="clock"><script>
+(function () {
+
+  
+function formatTime ( date ) {
+
+  var hours   = date.getHours()
+  var minutes = date.getMinutes()
+
+  if ( minutes < 10 ){
+    minutes = '0' + minutes
+  }
+
+  var suffix = 'AM';
+  if ( hours >= 12 ){
+    suffix = 'PM';
+    hours = hours - 12;
+  }
+  if ( hours == 0 ){
+    hours = 12;
+  }
+
+  return hours + ':' + minutes + ' ' + suffix;
+}
+
+
+  document.write( formatTime( new Date ));
+
+})();
+</script></time>
+
+  <a class="link" href="/">{Title}</a>
+
+  <script>
+(function () {
+
+  document.write( '<div class="comp-battery"></div>' );
+
+})();
+</script>
+
+</header>
+
+
+    
+<main id="main" class="layout-post-list autopagerize_page_element" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+
+{block:Posts}
+
+  {block:Date}
+
+    <time class="comp-post-date" datetime="{Timestamp}" data-date="{DayOfMonth}" itemprop="datePublished">{Month} {DayOfMonth}, {Year}</time>
+
+  {/block:Date}
+
+  <div class="mod-post" id="post-{PostID}">
+    {block:Answer}
+
+  <main itemprop="articleBody description">
+
+    <h3>{Asker} asked:</h3>
+
+    {Question}
+
+  {/block:Answer}
+
+  {block:Answerer}
+
+    <h3>{Answerer} asked:</h3>
+
+    {Answer}
+
+  </main>
+
+{/block:Answerer}
+
+    {block:Audio}
+
+  <main itemprop="articleBody">
+
+    <figure class="media">
+
+      {block:AudioPlayer}
+
+        {block:AlbumArt}
+
+          <img src="{AlbumArtURL}" alt="" class="audio-art media-obj-left" itemprop="image thumbnailUrl" content="{AlbumArtURL}">
+
+        {/block:AlbumArt}
+
+        <div class="media-body">
+
+          {block:Artist}
+
+            <h3>{Artist}</h3>
+
+          {/block:Artist}
+
+          {block:Album}
+
+            <p>{Album}</p>
+
+          {/block:Album}
+
+          {block:TrackName}
+
+            <p>{TrackName}</p>
+
+          {/block:TrackName}
+
+          {AudioPlayerGrey}
+
+        </div>
+
+        {block:ExternalAudio}
+
+          <p><a href="{ExternalAudioURL}">{lang:Download this track}</a></p>
+
+        {/block:ExternalAudio}
+
+        {block:PlayCount}
+
+          <p>{PlayCountWithLabel}</p>
+
+        {/block:PlayCount}
+
+      {/block:AudioPlayer}
+
+      {block:AudioEmbed}
+
+        {AudioEmbed-640}
+
+      {/block:AudioEmbed}
+
+      {block:Caption}
+
+        <figcaption>
+
+          {Caption}
+
+        </figcaption>
+
+      {/block:Caption}
+
+    </figure>
+
+  </main>
+
+{/block:Audio}
+
+    {block:Chat}
+
+  <header>
+
+    {block:IndexPage}
+
+      {block:Title}
+
+        <h2 class="post-title" itemprop="name headline"><a href="{Permalink}" itemprop="url">{Title}</a></h2>
+
+      {/block:Title}
+
+    {/block:IndexPage}
+
+    {block:PermalinkPage}
+
+      {block:Title}
+
+        <h1 class="post-title" itemprop="name headline">{Title}</h1>
+
+      {/block:Title}
+
+    {/block:PermalinkPage}
+
+  </header>
+
+  <main itemprop="articleBody description">
+
+    <ul class="chat">
+
+      {block:Lines}
+
+        <li class="{Alt}">
+
+          {block:Label}
+
+            <span class="label">{Label}</span>
+
+          {/block:Label}
+
+          {Line}
+
+        </li>
+
+      {/block:Lines}
+
+    </ul>
+
+  </main>
+
+{/block:Chat}
+
+    {block:Link}
+
+  <header>
+
+    <h2 class="post-title" itemprop="name headline"><a href="{URL}" {target}="" itemprop="url">{Name}</a></h2>
+
+  </header>
+
+  <main itemprop="articleBody description">
+
+    {block:Thumbnail}
+
+      {Thumbnail}
+
+    {/block:Thumbnail}
+
+    {block:Description}
+
+      {Description}
+
+    {/block:Description}
+
+  </main>
+
+{/block:Link}
+
+    {block:Panorama}
+
+  <main itemprop="articleBody">
+
+    {LinkOpenTag}
+
+      <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}">
+
+    {LinkCloseTag}
+
+    {block:Caption}
+
+      {Caption}
+
+    {/block:Caption}
+
+  </main>
+
+{/block:Panorama}
+
+    {block:Photo}
+
+  <figure class="mod-post-body photo" itemprop="articleBody">
+
+    <img class="image" src="{PhotoURL-HighRes}" alt="{PhotoAlt}" data-photo-width-highres="{PhotoWidth-HighRes}" data-photo-height-highres="{PhotoHeight-HighRes}" data-photo-url-highres="{PhotoURL-HighRes}" data-photo-url-lowres="{PhotoURL-250}" onclick="openImage(this, event)">
+
+    <figcaption class="caption">
+
+      {block:Caption}
+
+        {Caption}
+
+      {/block:Caption}
+
+      
+<!-- TAGS -->
+
+{block:HasTags}
+
+  <ul class="mod-tags">
+
+    {block:Tags}
+
+      <li itemprop="about keywords">{Tag}</li>
+
+    {block:Tags}
+
+  </ul>
+
+{/block:HasTags}
+
+
+    </figcaption>
+
+  </figure>
+
+{/block:Photo}
+    {block:Photoset}
+
+  <div class="mod-post-body photoset" itemprop="articleBody">
+
+    {Photoset}
+
+    {block:Caption}
+
+      {Caption}
+
+    {/block:Caption}
+
+    <p> <a href="{Permalink}" title="{lang:Link post}">permalink</a></p>
+
+    
+<!-- TAGS -->
+
+{block:HasTags}
+
+  <ul class="mod-tags">
+
+    {block:Tags}
+
+      <li itemprop="about keywords">{Tag}</li>
+
+    {block:Tags}
+
+  </ul>
+
+{/block:HasTags}
+
+
+  </div>
+
+{/block:Photoset}
+
+    {block:Quote}
+
+  <main itemprop="articleBody description">
+
+    <blockquote class="blockquote-{Length}">
+
+      {Quote}
+
+      {block:Source}
+
+        <cite>{Source}</cite>
+
+      {/block:Source}
+
+    </blockquote>
+
+  </main>
+
+{/block:Quote}
+
+    {block:Text}
+
+  <article class="mod-post-body text" itemprop="articleBody description">
+
+    {block:Title}
+
+      <h2 class="title" itemprop="name headline">{Title}</h2>
+
+    {/block:Title}
+
+    {Body}
+
+    <p> <a href="{Permalink}" title="{lang:Link post}">permalink</a></p>
+
+  </article>
+
+{/block:Text}
+    {block:Video}
+
+  <main itemprop="articleBody description">
+
+    {Video-700}
+
+    {block:Caption}
+
+      {Caption}
+
+    {/block:Caption}
+
+  </main>
+
+{/block:Video}
+
+  </div>
+
+  <p class="comp-post-status"><script>
+(function () {
+
+  
+function chance ( spread ) {
+  spread = spread || 2;
+  return Math.round( Math.random() * ( spread - 1)) == 0;
+}
+
+  
+function formatTime ( date ) {
+
+  var hours   = date.getHours()
+  var minutes = date.getMinutes()
+
+  if ( minutes < 10 ){
+    minutes = '0' + minutes
+  }
+
+  var suffix = 'AM';
+  if ( hours >= 12 ){
+    suffix = 'PM';
+    hours = hours - 12;
+  }
+  if ( hours == 0 ){
+    hours = 12;
+  }
+
+  return hours + ':' + minutes + ' ' + suffix;
+}
+
+
+  var status;
+
+  if ( chance( 3 )) {
+
+    status = 'Delivered';
+
+  } else {
+    var time;
+
+    if ( chance() ) {
+      var date = new Date()
+      date.setHours( parseInt( Math.random() * date.getHours() ));
+      date.setMinutes( parseInt( Math.random() * date.getMinutes() ));
+      time = formatTime( date );
+    } else {
+      time = 'yesterday';
+    }
+
+    status = 'Read <small>' + time + '</small>';
+  }
+
+  document.write( status );
+
+})();
+</script></p>
+
+{/block:Posts}
+
+</main>
+
+
+    {block:IfInfiniteScrolling}
+
+
+{/block:IfInfiniteScrolling}
+<script src="http://static.tumblr.com/c7cvhvu/mCZmb3z94/is.js"></script>
+    {block:IfGoogleAnalytics}
+
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  };
+  ga.l = +new Date;
+  ga('create', '{text:GoogleAnalyticsID}', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script async src="//www.google-analytics.com/analytics.js"></script>
+
+{/block:IfGoogleAnalytics}
+
+
+  </div>
+
+</body>
+
+</html>

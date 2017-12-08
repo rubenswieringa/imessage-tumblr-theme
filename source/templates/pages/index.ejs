@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="
+  {block:Dutch}nl{/block:Dutch}
+  {block:English}en{/block:English}
+  {block:French}fr{/block:French}
+  {block:German}de{/block:German}
+  {block:Italian}it{/block:Italian}
+  {block:Japanese}ja{/block:Japanese}
+  {block:Korean}ko{/block:Korean}
+  {block:Polish}pl{/block:Polish}
+  {block:PortugueseBR}pt-br{/block:PortugueseBR}
+  {block:PortuguesePT}pt{/block:PortuguesePT}
+  {block:Russian}ru{/block:Russian}
+  {block:Spanish}es{/block:Spanish}
+  {block:Turkish}tr{/block:Turkish}
+">
+
+<%- include('../partials/layouts/head'); %>
+
+<body itemscope="itemscope" itemtype="http://schema.org/WebPage">
+
+  <div class="layout-wrapper">
+
+    <%- include('../partials/layouts/header'); %>
+
+    <%- include('../partials/modules/posts'); %>
+
+    <%- include('../partials/scripts/infinite-scrolling'); %>
+    <%- include('../partials/scripts/google-analytics'); %>
+
+  </div>
+
+</body>
+
+</html>

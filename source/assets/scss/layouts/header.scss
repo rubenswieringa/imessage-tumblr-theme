@@ -1,0 +1,49 @@
+
+.layout-header {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+
+  .link,
+  .clock {
+    flex: 1 0 auto;
+
+    // align-items: center;
+    // justify-content: center;
+  }
+
+  .clock {
+
+
+    order: 1;
+    background-color: #8da;
+  }
+
+  .link {
+    order: 3;
+
+    background-color: #fda;
+  }
+
+  &:after {
+    // background-color: blue;
+    content: '';
+    display: block;
+    // height: 10px;
+    flex: 1 0 auto;
+    order: 2;
+    width: 100%;
+  }
+
+  &:before {
+    background-color: #faa;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 50%;
+    margin-left: -50vw;
+    position: absolute;
+    width: 100vw;
+    z-index: -1; // behind other stuff
+  }
+}

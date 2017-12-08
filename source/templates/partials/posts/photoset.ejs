@@ -1,0 +1,19 @@
+{block:Photoset}
+
+  <div class="mod-post-body photoset" itemprop="articleBody">
+
+    {Photoset}
+
+    {block:Caption}
+
+      {Caption}
+
+    {/block:Caption}
+
+    <p> <a href="{Permalink}" title="{lang:Link post}">permalink</a></p>
+
+    <%- include('../tags'); %>
+
+  </div>
+
+{/block:Photoset}

@@ -1,0 +1,54 @@
+
+.layout-wrapper {
+  background-color: #efe;
+  margin: 0 auto;
+  padding: 0 33px 33px;
+  width: -webkit-fit-content;
+  width:    -moz-fit-content;
+  width:         fit-content;
+}
+
+
+.layout-post-list {
+  box-sizing: border-box;
+  max-width: 550px;
+  width: fit-content;
+
+  // contain floating children
+  &:after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+
+  .mod-post {
+    float: right; // make only as wide as necessary
+    margin-top: 10px;
+  }
+
+  .mod-post,
+  .comp-post-date,
+  .comp-post-status {
+    clear: both;
+  }
+
+  .mod-post.photoset {
+    width: 100%;
+  }
+
+  .comp-post-date,
+  .comp-post-status {
+    margin-top: 10px;
+  }
+
+  .comp-post-status ~ .comp-post-status {
+    display: none;
+  }
+
+  @for $date from 1 through 31 {
+    .comp-post-date[data-date="#{$date}"] + .mod-post + .comp-post-status + .comp-post-date[data-date="#{$date}"],
+    .comp-post-date[data-date="#{$date}"] + .mod-post + * + .comp-post-status + .comp-post-date[data-date="#{$date}"] {
+      display: none;
+    }
+  }
+}
