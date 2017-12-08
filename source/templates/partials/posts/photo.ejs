@@ -1,0 +1,28 @@
+{block:Photo}
+
+  <figure class="mod-post-body photo" itemprop="articleBody">
+
+    <img class="image"
+         src="{PhotoURL-HighRes}"
+         alt="{PhotoAlt}"
+         data-photo-width-highres="{PhotoWidth-HighRes}"
+         data-photo-height-highres="{PhotoHeight-HighRes}"
+         data-photo-url-highres="{PhotoURL-HighRes}"
+         data-photo-url-lowres="{PhotoURL-250}"
+         onclick="openImage(this, event)" />
+
+    <figcaption class="caption">
+
+      {block:Caption}
+
+        {Caption}
+
+      {/block:Caption}
+
+      <%- include('../tags'); %>
+
+    </figcaption>
+
+  </figure>
+
+{/block:Photo}

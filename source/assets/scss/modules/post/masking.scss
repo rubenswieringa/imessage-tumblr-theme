@@ -1,0 +1,41 @@
+
+@import 'variables';
+
+@mixin post-masking {
+
+  /* autoprefixer: on */
+
+  border-radius: 0;
+  mask-border: $post-mask;
+  background-image: linear-gradient( to top, $post-background-color-bottom, $post-background-color-top );
+  background-attachment: fixed;
+
+  &:before {
+    content: none;
+  }
+
+  > .mod-post-body {
+    border-bottom-right-radius: 0;
+  }
+}
+
+
+/* autoprefixer: off */ // because autoprefixer messes up mask image URL in @supports query
+
+// Chrome 47+ (and Opera 34+)
+@supports (( mask-border: #{ $post-mask }) or ( -webkit-mask-box-image: #{ $post-mask }))
+      and (-webkit-appearance:none)
+      and (text-align-last:auto)
+      and (not (-ms-accelerator:true)) {
+  .mod-post {
+    @include post-masking;
+  }
+}
+
+// Safari 9+ (non-iOS)
+@supports ( mask-border: #{ $post-mask }) or ( -webkit-mask-box-image: #{ $post-mask }) {
+  _:-webkit-full-screen:not(:root:root),
+  .mod-post {
+    @include post-masking;
+  }
+}
