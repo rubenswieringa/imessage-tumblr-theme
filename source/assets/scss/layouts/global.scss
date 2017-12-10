@@ -1,8 +1,10 @@
 
+@import 'variables';
+
 .layout-wrapper {
-  background-color: #efe;
   margin: 0 auto;
-  padding: 0 33px 33px;
+  padding: 33px;
+  padding-top: 0;//$layout-header-height + 33px;
   width: -webkit-fit-content;
   width:    -moz-fit-content;
   width:         fit-content;
@@ -10,6 +12,7 @@
 
 
 .layout-post-list {
+  padding-top: 15px;
   box-sizing: border-box;
   max-width: 550px;
   width: fit-content;

@@ -191,13 +191,14 @@ body {
 .comp-battery {
   color: black;
   border-color: currentColor;
-  width: 30px;
-  height: 10px;
+  width: 25px;
+  height: 12px;
   border-width: 1px;
   border-style: solid;
   border-radius: 2px;
   position: relative;
   overflow: visible;
+  box-sizing: border-box;
 }
 .comp-battery:before {
   content: '';
@@ -210,7 +211,8 @@ body {
   background-color: black;
   /*#0e0;*/
   transform-origin: left;
-  transform: scale(0.5, 1);
+  transform: scale(0.36, 1);
+  border-radius: 1px;
 }
 .comp-battery:after {
   content: '';
@@ -234,6 +236,7 @@ body {
 
 .comp-post-status {
   display: block;
+  text-align: right;
 }
 
 .mod-post {
@@ -317,15 +320,16 @@ body {
 }
 
 .layout-wrapper {
-  background-color: #efe;
   margin: 0 auto;
-  padding: 0 33px 33px;
+  padding: 33px;
+  padding-top: 0;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
 
 .layout-post-list {
+  padding-top: 15px;
   box-sizing: border-box;
   max-width: 550px;
   width: fit-content;
@@ -480,34 +484,41 @@ body {
 }
 
 .layout-header {
-  display: flex;
+  color: black;
+  padding: 6px 0 13px;
   position: relative;
-  flex-wrap: wrap;
+  z-index: 1;
+  min-height: 90px;
+  box-sizing: border-box;
+  text-align: center;
 }
-.layout-header .link,
 .layout-header .clock {
-  flex: 1 0 auto;
-}
-.layout-header .clock {
-  order: 1;
-  background-color: #8da;
-}
-.layout-header .link {
-  order: 3;
-  background-color: #fda;
-}
-.layout-header:after {
-  content: '';
   display: block;
-  flex: 1 0 auto;
-  order: 2;
-  width: 100%;
+  font-size: 12px;
+  font-weight: bold;
+}
+.layout-header .title {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  font-size: 30px;
+  line-height: 1.2em;
+  font-weight: 500;
+  margin-top: 12px;
+}
+.layout-header .comp-battery {
+  position: absolute;
+  right: 3px;
+  top: 5px;
 }
 .layout-header:before {
-  background-color: #faa;
+  background-color: rgba(248, 248, 248, 0.96);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
   content: '';
   display: block;
   height: 100%;
+  box-sizing: border-box;
+  top: 0;
   left: 50%;
   margin-left: -50vw;
   position: absolute;
@@ -604,7 +615,7 @@ function formatTime ( date ) {
 })();
 </script></time>
 
-  <a class="link" href="/">{Title}</a>
+  <a class="title" href="/">{Title}</a>
 
   <script>
 (function () {

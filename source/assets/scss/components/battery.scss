@@ -2,14 +2,16 @@
 .comp-battery {
   color: black;
   border-color: currentColor;
-  width: 30px;
-  height: 10px;
+  width: 25px;
+  height: 12px;
   border-width: 1px;
   border-style: solid;
   border-radius: 2px;
   position: relative;
   overflow: visible;
+  box-sizing: border-box;
 
+  // charge-level
   &:before {
     content: '';
     display: block;
@@ -20,9 +22,11 @@
     bottom: 1px;
     background-color: black;/*#0e0;*/
     transform-origin: left;
-    transform: scale( 0.5, 1 );
+    transform: scale( 0.36, 1 );
+    border-radius: 1px;
   }
 
+  // plus-side
   &:after {
     content: '';
     display: block;

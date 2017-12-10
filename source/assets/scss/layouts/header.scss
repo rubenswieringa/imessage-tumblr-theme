@@ -1,45 +1,46 @@
 
+@import 'variables';
+
 .layout-header {
-  display: flex;
-  position: relative;
-  flex-wrap: wrap;
-
-  .link,
-  .clock {
-    flex: 1 0 auto;
-
-    // align-items: center;
-    // justify-content: center;
-  }
+  color: black;
+  padding: 6px 0 13px;
+  position: relative; // for absolute positioning of :after
+  z-index: 1;
+  min-height: $layout-header-height;
+  box-sizing: border-box;
+  text-align: center;
 
   .clock {
-
-
-    order: 1;
-    background-color: #8da;
-  }
-
-  .link {
-    order: 3;
-
-    background-color: #fda;
-  }
-
-  &:after {
-    // background-color: blue;
-    content: '';
     display: block;
-    // height: 10px;
-    flex: 1 0 auto;
-    order: 2;
-    width: 100%;
+    font-size: 12px;
+    font-weight: bold;
   }
 
+  .title {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    font-size: 30px;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin-top: 12px;
+  }
+
+  .comp-battery {
+    position: absolute;
+    right: 3px;
+    top:   5px;
+  }
+
+  // background
   &:before {
-    background-color: #faa;
+    background-color: rgba( #f8f8f8, .96 );
+    border-bottom: 1px solid rgba( black, .16 );
     content: '';
     display: block;
     height: 100%;
+    box-sizing: border-box;
+    top: 0;
     left: 50%;
     margin-left: -50vw;
     position: absolute;
