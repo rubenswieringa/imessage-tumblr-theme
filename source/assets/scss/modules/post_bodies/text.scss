@@ -1,5 +1,16 @@
 
+@import 'variables';
+
 .mod-post-body.text {
+  padding-top:    $post-body-top-padding;
+  padding-bottom: $post-body-bottom-padding;
+
+  > p,
+  > .title,
+  > .mod-tags {
+    padding: 0 $post-body-side-padding;
+  }
+
   .title {
     font-size: 21px;
   }

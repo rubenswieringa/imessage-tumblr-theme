@@ -1,0 +1,29 @@
+
+@import 'variables';
+@import '../post/variables';
+
+.mod-post-body {
+
+  .permalink {
+    display: none;
+    position: absolute;
+    bottom: $post-body-bottom-padding;
+    right:  $post-body-side-padding;
+    margin-right: -2px;
+    font-size: 11px;
+    color: inherit;
+
+    @at-root .mod-post:hover & {
+      display: block;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  p      + .mod-tags,
+  .title + .mod-tags {
+    margin-top: 0.3em;
+  }
+}

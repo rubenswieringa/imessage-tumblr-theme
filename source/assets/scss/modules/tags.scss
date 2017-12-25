@@ -1,0 +1,12 @@
+
+.mod-tags {
+  display: block;
+
+  .tag {
+    display: inline;
+
+    &:before {
+      content: '#';
+    }
+  }
+}

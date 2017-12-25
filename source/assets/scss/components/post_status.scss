@@ -2,4 +2,11 @@
 .comp-post-status {
   display: block;
   text-align: right;
+  font-size: 12px;
+  font-weight: bold;
+  color: #8e8e93;
+
+  small {
+    font-weight: normal;
+  }
 }

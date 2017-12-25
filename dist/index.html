@@ -232,11 +232,88 @@ body {
 .comp-post-date {
   display: block;
   text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #8e8e93;
+}
+.comp-post-date small {
+  font-weight: normal;
 }
 
 .comp-post-status {
   display: block;
   text-align: right;
+  font-size: 12px;
+  font-weight: bold;
+  color: #8e8e93;
+}
+.comp-post-status small {
+  font-weight: normal;
+}
+
+.mod-tags {
+  display: block;
+}
+.mod-tags .tag {
+  display: inline;
+}
+.mod-tags .tag:before {
+  content: '#';
+}
+
+.mod-post-body .permalink {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  margin-right: -2px;
+  font-size: 11px;
+  color: inherit;
+}
+.mod-post:hover .mod-post-body .permalink {
+  display: block;
+}
+.mod-post-body .permalink:hover {
+  text-decoration: none;
+}
+.mod-post-body p + .mod-tags,
+.mod-post-body .title + .mod-tags {
+  margin-top: 0.3em;
+}
+
+.mod-post-body.photo > .image {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+.mod-post-body.photo > .html_photoset {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+.mod-post-body.photo > .html_photoset > iframe {
+  display: block;
+}
+.mod-post-body.photo > .caption {
+  padding-top: 9px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+.mod-post-body.photo > .caption:empty {
+  display: none;
+}
+
+.mod-post-body.text {
+  padding-top: 9px;
+  padding-bottom: 10px;
+}
+.mod-post-body.text > p,
+.mod-post-body.text > .title,
+.mod-post-body.text > .mod-tags {
+  padding: 0 10px;
+}
+.mod-post-body.text .title {
+  font-size: 21px;
 }
 
 .mod-post {
@@ -283,6 +360,12 @@ body {
   .mod-post > .mod-post-body {
     border-bottom-right-radius: 0;
   }
+  .mod-post > .mod-post-body > p,
+  .mod-post > .mod-post-body > .title,
+  .mod-post > .mod-post-body > .caption,
+  .mod-post > .mod-post-body > .mod-tags {
+    padding-right: 16px;
+  }
 }
 @supports (mask-border: url(http://static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch) or (-webkit-mask-box-image: url(http://static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch) {
   _:-webkit-full-screen:not(:root:root),
@@ -303,22 +386,17 @@ body {
   .mod-post > .mod-post-body {
     border-bottom-right-radius: 0;
   }
+  _:-webkit-full-screen:not(:root:root) > .mod-post-body > p,
+  _:-webkit-full-screen:not(:root:root) > .mod-post-body > .title,
+  _:-webkit-full-screen:not(:root:root) > .mod-post-body > .caption,
+  _:-webkit-full-screen:not(:root:root) > .mod-post-body > .mod-tags,
+  .mod-post > .mod-post-body > p,
+  .mod-post > .mod-post-body > .title,
+  .mod-post > .mod-post-body > .caption,
+  .mod-post > .mod-post-body > .mod-tags {
+    padding-right: 16px;
+  }
 }
-.mod-post-body.photo .image {
-  display: block;
-  width: 100%;
-  cursor: pointer;
-}
-
-.mod-post-body.photoset > .html_photoset {
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
-}
-
-.mod-post-body.text .title {
-  font-size: 21px;
-}
-
 .layout-wrapper {
   margin: 0 auto;
   padding: 33px;
@@ -326,6 +404,12 @@ body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+@media screen and (max-width: 480px) {
+  .layout-wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 .layout-post-list {
@@ -838,70 +922,44 @@ function formatTime ( date ) {
 
     <img class="image" src="{PhotoURL-HighRes}" alt="{PhotoAlt}" data-photo-width-highres="{PhotoWidth-HighRes}" data-photo-height-highres="{PhotoHeight-HighRes}" data-photo-url-highres="{PhotoURL-HighRes}" data-photo-url-lowres="{PhotoURL-250}" onclick="openImage(this, event)">
 
-    <figcaption class="caption">
-
-      {block:Caption}
-
-        {Caption}
-
-      {/block:Caption}
-
-      
-<!-- TAGS -->
-
-{block:HasTags}
+    <figcaption class="caption">{block:Caption}{Caption}{/block:Caption}{block:HasTags}
 
   <ul class="mod-tags">
 
     {block:Tags}
 
-      <li itemprop="about keywords">{Tag}</li>
+      <li class="tag" itemprop="about keywords">{Tag}</li>
 
     {block:Tags}
 
   </ul>
 
-{/block:HasTags}
-
-
-    </figcaption>
+{/block:HasTags}</figcaption>
 
   </figure>
 
 {/block:Photo}
     {block:Photoset}
 
-  <div class="mod-post-body photoset" itemprop="articleBody">
+  <figure class="mod-post-body photo" itemprop="articleBody">
 
     {Photoset}
 
-    {block:Caption}
-
-      {Caption}
-
-    {/block:Caption}
-
-    <p> <a href="{Permalink}" title="{lang:Link post}">permalink</a></p>
-
-    
-<!-- TAGS -->
-
-{block:HasTags}
+    <figcaption class="caption">{block:Caption}{Caption}{/block:Caption}{block:HasTags}
 
   <ul class="mod-tags">
 
     {block:Tags}
 
-      <li itemprop="about keywords">{Tag}</li>
+      <li class="tag" itemprop="about keywords">{Tag}</li>
 
     {block:Tags}
 
   </ul>
 
-{/block:HasTags}
+{/block:HasTags}</figcaption>
 
-
-  </div>
+  </figure>
 
 {/block:Photoset}
 
@@ -937,7 +995,21 @@ function formatTime ( date ) {
 
     {Body}
 
-    <p> <a href="{Permalink}" title="{lang:Link post}">permalink</a></p>
+    {block:HasTags}
+
+  <ul class="mod-tags">
+
+    {block:Tags}
+
+      <li class="tag" itemprop="about keywords">{Tag}</li>
+
+    {block:Tags}
+
+  </ul>
+
+{/block:HasTags}
+
+    <a class="permalink" href="{Permalink}" title="{lang:Link post}">permalink</a>
 
   </article>
 

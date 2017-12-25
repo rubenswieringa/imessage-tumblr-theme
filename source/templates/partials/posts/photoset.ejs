@@ -1,19 +1,11 @@
 {block:Photoset}
 
-  <div class="mod-post-body photoset" itemprop="articleBody">
+  <figure class="mod-post-body photo" itemprop="articleBody">
 
     {Photoset}
 
-    {block:Caption}
+    <figcaption class="caption">{block:Caption}{Caption}{/block:Caption}<%- include('../tags'); %></figcaption>
 
-      {Caption}
-
-    {/block:Caption}
-
-    <p> <a href="{Permalink}" title="{lang:Link post}">permalink</a></p>
-
-    <%- include('../tags'); %>
-
-  </div>
+  </figure>
 
 {/block:Photoset}
