@@ -9,3 +9,5 @@
 ---
 
 Thank you Marco Biedermann for the Tumblr Theme Boilerplate
+
+Copyright © 2018 Ruben Swieringa | [GNU GPLv3](//github.com/rubenswieringa/imessage-tumblr-theme/blob/master/LICENSE.md) licence
