@@ -2,4 +2,11 @@
 .comp-post-date {
   display: block;
   text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #8e8e93;
+
+  small {
+    font-weight: normal;
+  }
 }

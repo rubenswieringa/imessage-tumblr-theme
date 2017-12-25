@@ -11,17 +11,7 @@
          data-photo-url-lowres="{PhotoURL-250}"
          onclick="openImage(this, event)" />
 
-    <figcaption class="caption">
-
-      {block:Caption}
-
-        {Caption}
-
-      {/block:Caption}
-
-      <%- include('../tags'); %>
-
-    </figcaption>
+    <figcaption class="caption">{block:Caption}{Caption}{/block:Caption}<%- include('../tags'); %></figcaption>
 
   </figure>
 

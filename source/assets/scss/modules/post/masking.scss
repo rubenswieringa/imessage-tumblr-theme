@@ -1,5 +1,6 @@
 
 @import 'variables';
+@import '../post_bodies/variables';
 
 @mixin post-masking {
 
@@ -16,6 +17,13 @@
 
   > .mod-post-body {
     border-bottom-right-radius: 0;
+
+    > p,
+    > .title,
+    > .caption,
+    > .mod-tags {
+      padding-right: $post-body-side-padding + 6px;
+    }
   }
 }
 

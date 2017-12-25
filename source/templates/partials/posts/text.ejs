@@ -10,7 +10,9 @@
 
     {Body}
 
-    <p> <a href="{Permalink}" title="{lang:Link post}">permalink</a></p>
+    <%- include('../tags'); %>
+
+    <a class="permalink" href="{Permalink}" title="{lang:Link post}">permalink</a>
 
   </article>
 
