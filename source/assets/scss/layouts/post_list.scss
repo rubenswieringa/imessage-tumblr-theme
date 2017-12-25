@@ -19,6 +19,17 @@
     margin-top: 10px;
   }
 
+  .comp-post-date {
+    float: left; // float because other we can't use margins to push away posts and statuses
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .comp-post-status {
+    float: right;
+    margin: 5px 0;
+  }
+
   .mod-post,
   .comp-post-date,
   .comp-post-status {
@@ -27,11 +38,6 @@
 
   .mod-post.photoset {
     width: 100%;
-  }
-
-  .comp-post-date,
-  .comp-post-status {
-    margin-top: 10px;
   }
 
   .comp-post-status ~ .comp-post-status {

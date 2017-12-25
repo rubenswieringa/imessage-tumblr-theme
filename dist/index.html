@@ -242,7 +242,6 @@ body {
 
 .comp-post-status {
   display: block;
-  text-align: right;
   font-size: 12px;
   font-weight: bold;
   color: #8e8e93;
@@ -275,6 +274,18 @@ body {
 }
 .mod-post-body .permalink:hover {
   text-decoration: none;
+}
+.mod-post-body p b,
+.mod-post-body p strong {
+  font-weight: 500;
+}
+.mod-post-body p i,
+.mod-post-body p em {
+  font-style: italic;
+}
+.mod-post-body p a {
+  color: inherit;
+  text-decoration: underline;
 }
 .mod-post-body p + .mod-tags,
 .mod-post-body .title + .mod-tags {
@@ -314,6 +325,7 @@ body {
 }
 .mod-post-body.text .title {
   font-size: 21px;
+  margin-bottom: 2px;
 }
 
 .mod-post {
@@ -427,6 +439,15 @@ body {
   float: right;
   margin-top: 10px;
 }
+.layout-post-list .comp-post-date {
+  float: left;
+  width: 100%;
+  margin-top: 16px;
+}
+.layout-post-list .comp-post-status {
+  float: right;
+  margin: 5px 0;
+}
 .layout-post-list .mod-post,
 .layout-post-list .comp-post-date,
 .layout-post-list .comp-post-status {
@@ -434,10 +455,6 @@ body {
 }
 .layout-post-list .mod-post.photoset {
   width: 100%;
-}
-.layout-post-list .comp-post-date,
-.layout-post-list .comp-post-status {
-  margin-top: 10px;
 }
 .layout-post-list .comp-post-status ~ .comp-post-status {
   display: none;
