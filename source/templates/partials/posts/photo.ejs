@@ -1,5 +1,7 @@
 {block:Photo}
 
+<div class="mod-post media" id="post-{PostID}">
+
   <figure class="mod-post-body photo" itemprop="articleBody">
 
     <img class="image"
@@ -14,5 +16,7 @@
     <figcaption class="caption">{block:Caption}{Caption}{/block:Caption}<%- include('../tags'); %></figcaption>
 
   </figure>
+
+</div>
 
 {/block:Photo}

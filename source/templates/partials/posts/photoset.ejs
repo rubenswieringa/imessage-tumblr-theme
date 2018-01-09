@@ -1,11 +1,15 @@
 {block:Photoset}
 
-  <figure class="mod-post-body photo" itemprop="articleBody">
+<div class="mod-post media" id="post-{PostID}">
+
+  <figure class="mod-post-body photoset" itemprop="articleBody">
 
     {Photoset}
 
     <figcaption class="caption">{block:Caption}{Caption}{/block:Caption}<%- include('../tags'); %></figcaption>
 
   </figure>
+
+</div>
 
 {/block:Photoset}

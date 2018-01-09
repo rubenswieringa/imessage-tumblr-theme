@@ -1,32 +1,13 @@
 
+@import 'media';
+
 .mod-post-body.photo {
 
-  // photo post-type
+  @extend %mod-media-post-body;
+
   > .image {
     display: block;
     width: 100%;
     cursor: pointer;
-  }
-
-  // photoset post-type
-  > .html_photoset {
-    border-top-left-radius:  inherit;
-    border-top-right-radius: inherit;
-
-    > iframe {
-      display: block;
-    }
-  }
-
-  // text
-  > .caption {
-    padding-top:    $post-body-top-padding;
-    padding-left:   $post-body-side-padding;
-    padding-bottom: $post-body-bottom-padding;
-    padding-right:  $post-body-side-padding;
-
-    &:empty {
-      display: none;
-    }
   }
 }
