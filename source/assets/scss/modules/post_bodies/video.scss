@@ -1,0 +1,32 @@
+
+@import 'media';
+
+.mod-post-body.video {
+
+  @extend %mod-media-post-body;
+
+  > .video {
+    box-sizing: content-box;
+    position: relative;
+    padding-bottom: ( 9 / 16 ) * 100%; // 16:9 aspect-ratio
+    height: 0;
+    overflow: hidden;
+
+    iframe,
+    .tumblr_video_container {
+      display: block;
+      position: absolute;
+      top:  0;
+      left: 0;
+      width:  100% !important;
+      height: 100% !important;
+    }
+
+    // undo instagram iframe styling
+    iframe {
+      border: none !important;
+      margin: 0 !important;
+      max-width: none !important;
+    }
+  }
+}

@@ -1,15 +1,17 @@
 {block:Video}
 
-  <main itemprop="articleBody description">
+<div class="mod-post media" id="post-{PostID}">
 
-    {Video-700}
+  <figure class="mod-post-body video" itemprop="articleBody">
 
-    {block:Caption}
+    <div class="video">
+      {Video-700}
+    </div>
 
-      {Caption}
+    <figcaption class="caption">{block:Caption}{Caption}{/block:Caption}<%- include('../tags'); %></figcaption>
 
-    {/block:Caption}
+  </figure>
 
-  </main>
+</div>
 
 {/block:Video}

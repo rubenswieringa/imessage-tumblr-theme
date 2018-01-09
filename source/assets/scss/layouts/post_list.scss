@@ -15,14 +15,18 @@
   }
 
   .mod-post {
-    float: right; // make only as wide as necessary
     margin-top: 10px;
+
+    &:not(.media) {
+      float: right; // only as wide as necessary
+    }
   }
 
   .comp-post-date {
     float: left; // float because other we can't use margins to push away posts and statuses
     width: 100%;
     margin-top: 16px;
+    margin-bottom: 10px;
   }
 
   .comp-post-status {
@@ -34,10 +38,6 @@
   .comp-post-date,
   .comp-post-status {
     clear: both;
-  }
-
-  .mod-post.photoset {
-    width: 100%;
   }
 
   .comp-post-status ~ .comp-post-status {

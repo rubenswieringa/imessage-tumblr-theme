@@ -292,28 +292,6 @@ body {
   margin-top: 0.3em;
 }
 
-.mod-post-body.photo > .image {
-  display: block;
-  width: 100%;
-  cursor: pointer;
-}
-.mod-post-body.photo > .html_photoset {
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
-}
-.mod-post-body.photo > .html_photoset > iframe {
-  display: block;
-}
-.mod-post-body.photo > .caption {
-  padding-top: 9px;
-  padding-left: 10px;
-  padding-bottom: 10px;
-  padding-right: 10px;
-}
-.mod-post-body.photo > .caption:empty {
-  display: none;
-}
-
 .mod-post-body.text {
   padding-top: 9px;
   padding-bottom: 10px;
@@ -326,6 +304,78 @@ body {
 .mod-post-body.text .title {
   font-size: 21px;
   margin-bottom: 2px;
+}
+
+.mod-post-body.photo iframe, .mod-post-body.photoset iframe, .mod-post-body.video iframe {
+  display: block;
+}
+.mod-post-body.photo > .caption, .mod-post-body.photoset > .caption, .mod-post-body.video > .caption {
+  padding-top: 9px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+.mod-post-body.photo > .caption:empty, .mod-post-body.photoset > .caption:empty, .mod-post-body.video > .caption:empty {
+  display: none;
+}
+
+.mod-post-body.photo > .image {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.mod-post-body.photo iframe, .mod-post-body.photoset iframe, .mod-post-body.video iframe {
+  display: block;
+}
+.mod-post-body.photo > .caption, .mod-post-body.photoset > .caption, .mod-post-body.video > .caption {
+  padding-top: 9px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+.mod-post-body.photo > .caption:empty, .mod-post-body.photoset > .caption:empty, .mod-post-body.video > .caption:empty {
+  display: none;
+}
+
+.mod-post-body.photoset > .html_photoset {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.mod-post-body.photo iframe, .mod-post-body.photoset iframe, .mod-post-body.video iframe {
+  display: block;
+}
+.mod-post-body.photo > .caption, .mod-post-body.photoset > .caption, .mod-post-body.video > .caption {
+  padding-top: 9px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+.mod-post-body.photo > .caption:empty, .mod-post-body.photoset > .caption:empty, .mod-post-body.video > .caption:empty {
+  display: none;
+}
+
+.mod-post-body.video > .video {
+  box-sizing: content-box;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.mod-post-body.video > .video iframe,
+.mod-post-body.video > .video .tumblr_video_container {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+.mod-post-body.video > .video iframe {
+  border: none !important;
+  margin: 0 !important;
+  max-width: none !important;
 }
 
 .mod-post {
@@ -436,13 +486,16 @@ body {
   content: '';
 }
 .layout-post-list .mod-post {
-  float: right;
   margin-top: 10px;
+}
+.layout-post-list .mod-post:not(.media) {
+  float: right;
 }
 .layout-post-list .comp-post-date {
   float: left;
   width: 100%;
   margin-top: 16px;
+  margin-bottom: 10px;
 }
 .layout-post-list .comp-post-status {
   float: right;
@@ -452,9 +505,6 @@ body {
 .layout-post-list .comp-post-date,
 .layout-post-list .comp-post-status {
   clear: both;
-}
-.layout-post-list .mod-post.photoset {
-  width: 100%;
 }
 .layout-post-list .comp-post-status ~ .comp-post-status {
   display: none;
@@ -740,8 +790,7 @@ function formatTime ( date ) {
 
   {/block:Date}
 
-  <div class="mod-post" id="post-{PostID}">
-    {block:Answer}
+  {block:Answer}
 
   <main itemprop="articleBody description">
 
@@ -761,7 +810,7 @@ function formatTime ( date ) {
 
 {/block:Answerer}
 
-    {block:Audio}
+  {block:Audio}
 
   <main itemprop="articleBody">
 
@@ -835,7 +884,7 @@ function formatTime ( date ) {
 
 {/block:Audio}
 
-    {block:Chat}
+  {block:Chat}
 
   <header>
 
@@ -887,7 +936,7 @@ function formatTime ( date ) {
 
 {/block:Chat}
 
-    {block:Link}
+  {block:Link}
 
   <header>
 
@@ -913,7 +962,7 @@ function formatTime ( date ) {
 
 {/block:Link}
 
-    {block:Panorama}
+  {block:Panorama}
 
   <main itemprop="articleBody">
 
@@ -933,7 +982,9 @@ function formatTime ( date ) {
 
 {/block:Panorama}
 
-    {block:Photo}
+  {block:Photo}
+
+<div class="mod-post media" id="post-{PostID}">
 
   <figure class="mod-post-body photo" itemprop="articleBody">
 
@@ -955,10 +1006,14 @@ function formatTime ( date ) {
 
   </figure>
 
-{/block:Photo}
-    {block:Photoset}
+</div>
 
-  <figure class="mod-post-body photo" itemprop="articleBody">
+{/block:Photo}
+  {block:Photoset}
+
+<div class="mod-post media" id="post-{PostID}">
+
+  <figure class="mod-post-body photoset" itemprop="articleBody">
 
     {Photoset}
 
@@ -978,9 +1033,11 @@ function formatTime ( date ) {
 
   </figure>
 
+</div>
+
 {/block:Photoset}
 
-    {block:Quote}
+  {block:Quote}
 
   <main itemprop="articleBody description">
 
@@ -1000,7 +1057,9 @@ function formatTime ( date ) {
 
 {/block:Quote}
 
-    {block:Text}
+  {block:Text}
+
+<div class="mod-post" id="post-{PostID}">
 
   <article class="mod-post-body text" itemprop="articleBody description">
 
@@ -1030,24 +1089,39 @@ function formatTime ( date ) {
 
   </article>
 
+</div>
+
 {/block:Text}
-    {block:Video}
+  {block:Video}
 
-  <main itemprop="articleBody description">
+<div class="mod-post media" id="post-{PostID}">
 
-    {Video-700}
+  <figure class="mod-post-body video" itemprop="articleBody">
 
-    {block:Caption}
+    <div class="video">
+      {Video-700}
+    </div>
 
-      {Caption}
+    <figcaption class="caption">{block:Caption}{Caption}{/block:Caption}{block:HasTags}
 
-    {/block:Caption}
+  <ul class="mod-tags">
 
-  </main>
+    {block:Tags}
+
+      <li class="tag" itemprop="about keywords">{Tag}</li>
+
+    {block:Tags}
+
+  </ul>
+
+{/block:HasTags}</figcaption>
+
+  </figure>
+
+</div>
 
 {/block:Video}
 
-  </div>
 
   <p class="comp-post-status"><script>
 (function () {

@@ -1,0 +1,18 @@
+
+%mod-media-post-body {
+
+  iframe {
+    display: block;
+  }
+
+  > .caption {
+    padding-top:    $post-body-top-padding;
+    padding-left:   $post-body-side-padding;
+    padding-bottom: $post-body-bottom-padding;
+    padding-right:  $post-body-side-padding;
+
+    &:empty {
+      display: none;
+    }
+  }
+}
