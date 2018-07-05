@@ -1,19 +1,20 @@
 {block:Panorama}
 
-  <main itemprop="articleBody">
+<div class="mod-post media" id="post-{PostID}">
 
-    {LinkOpenTag}
+  <figure class="mod-post-body photo" itemprop="articleBody">
 
-      <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}">
+    <img class="image"
+         src="{PhotoURL-HighRes}"
+         alt="{PhotoAlt}"
+         data-post-id="{PostID}"
+         data-blog-id="{Name}"
+         onclick="openImage(this, event, true)" />
 
-    {LinkCloseTag}
+    <figcaption class="caption">{block:Caption}{Caption}{/block:Caption}<%- include('../tags'); %></figcaption>
 
-    {block:Caption}
+  </figure>
 
-      {Caption}
-
-    {/block:Caption}
-
-  </main>
+</div>
 
 {/block:Panorama}
