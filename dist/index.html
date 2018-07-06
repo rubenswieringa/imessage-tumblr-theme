@@ -145,6 +145,10 @@ html {
   line-height: 1;
 }
 
+body {
+  -webkit-text-size-adjust: 100%;
+}
+
 ol, ul {
   list-style: none;
 }
@@ -712,9 +716,20 @@ body {
 
   <script>
 
+// console.log('\n\n\n\n\n\n');
+// console.log('%c'+                'X'
+//            ,'font-weight:bold;color:#Cc2');
+// console.log('\n\n\n\n\n\n');
+
 function openImage ( element, event, panorama ) {
 
   event = event || window.event;
+
+  // console.group('openImage()');
+  // console.log(element);
+  // console.log(event);
+  // console.log(!!panorama);
+  // console.groupEnd();
 
   if ( event && ( event.metaKey || event.altKey )){
     return true;
