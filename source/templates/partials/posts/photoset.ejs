@@ -3,13 +3,29 @@
 <div class="mod-post media" id="post-{PostID}">
 
   <figure class="mod-post-body photoset" itemprop="articleBody">
+    <ul class="image-list" id="image-list-{PostID}">
 
-    {Photoset}
+      {block:Photos}
+        <li class="image-container">
+          <img class="image"
+               src="{PhotoURL-HighRes}"
+               alt="{PhotoAlt}"
+               data-photo-width-highres="{PhotoWidth-HighRes}"
+               data-photo-height-highres="{PhotoHeight-HighRes}"
+               data-photo-url-highres="{PhotoURL-HighRes}"
+               data-photo-url-lowres="{PhotoURL-250}"
+               onclick="openImage(this, event, 'image-list-{PostID}')" />
+        </li>
+      {/block:Photos}
 
+    </ul>
     <figcaption class="caption">{block:Caption}{Caption}{/block:Caption}<%- include('../tags'); %></figcaption>
-
   </figure>
 
 </div>
+
+<script>
+  initializePhotosetContainer( 'image-list-{PostID}', {JSPhotosetLayout} );
+</script>
 
 {/block:Photoset}

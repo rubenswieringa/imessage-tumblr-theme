@@ -1,5 +1,5 @@
 
-function openImage ( element, event, panorama ) {
+function openImage ( element, event, containerID, panorama ) {
 
   event = event || window.event;
 
@@ -16,12 +16,22 @@ function openImage ( element, event, panorama ) {
   }
   else
   {
-    window.parent.Tumblr.Lightbox.init([{
-      width:    element.getAttribute( 'data-photo-width-highres' ),
-      height:   element.getAttribute( 'data-photo-height-highres' ),
-      high_res: element.getAttribute( 'data-photo-url-highres' ),
-      low_res:  element.getAttribute( 'data-photo-url-lowres' )
-    }]);
+    var openAt = 0;
+    var container = containerID ? document.getElementById( containerID ) : null;
+    var items = ( container ? Array.prototype.slice.call( container.querySelectorAll( 'img[data-photo-url-highres]' )) : [ element ]).map( function ( image, index ) {
+      if ( image == element ) {
+        openAt = index + 1;
+      }
+      return {
+        width:    image.getAttribute( 'data-photo-width-highres' ),
+        height:   image.getAttribute( 'data-photo-height-highres' ),
+        high_res: image.getAttribute( 'data-photo-url-highres' ),
+        low_res:  image.getAttribute( 'data-photo-url-lowres' )
+      }
+    });
+
+    window.parent.Tumblr.Lightbox.init( items, openAt );
+
     return false;
   }
 

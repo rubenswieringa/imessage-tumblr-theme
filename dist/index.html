@@ -288,9 +288,26 @@ body {
   display: none;
 }
 
-.mod-post-body.photoset > .html_photoset {
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
+.mod-post-body.photoset .image-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+.mod-post-body.photoset .image-container {
+  width: 100%;
+}
+.mod-post-body.photoset .image-container.half {
+  width: 50%;
+}
+.mod-post-body.photoset .image-container.third {
+  width: 33%;
+}
+.mod-post-body.photoset .image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
 }
 
 .mod-post-body.photo iframe, .mod-post-body.photoset iframe, .mod-post-body.video iframe {
@@ -662,20 +679,9 @@ body {
 
   <script>
 
-// console.log('\n\n\n\n\n\n');
-// console.log('%c'+                'X'
-//            ,'font-weight:bold;color:#Cc2');
-// console.log('\n\n\n\n\n\n');
-
-function openImage ( element, event, panorama ) {
+function openImage ( element, event, containerID, panorama ) {
 
   event = event || window.event;
-
-  // console.group('openImage()');
-  // console.log(element);
-  // console.log(event);
-  // console.log(!!panorama);
-  // console.groupEnd();
 
   if ( event && ( event.metaKey || event.altKey )){
     return true;
@@ -690,16 +696,53 @@ function openImage ( element, event, panorama ) {
   }
   else
   {
-    window.parent.Tumblr.Lightbox.init([{
-      width:    element.getAttribute( 'data-photo-width-highres' ),
-      height:   element.getAttribute( 'data-photo-height-highres' ),
-      high_res: element.getAttribute( 'data-photo-url-highres' ),
-      low_res:  element.getAttribute( 'data-photo-url-lowres' )
-    }]);
+    var openAt = 0;
+    var container = containerID ? document.getElementById( containerID ) : null;
+    var items = ( container ? Array.prototype.slice.call( container.querySelectorAll( 'img[data-photo-url-highres]' )) : [ element ]).map( function ( image, index ) {
+      if ( image == element ) {
+        openAt = index + 1;
+      }
+      return {
+        width:    image.getAttribute( 'data-photo-width-highres' ),
+        height:   image.getAttribute( 'data-photo-height-highres' ),
+        high_res: image.getAttribute( 'data-photo-url-highres' ),
+        low_res:  image.getAttribute( 'data-photo-url-lowres' )
+      }
+    });
+
+    window.parent.Tumblr.Lightbox.init( items, openAt );
+
     return false;
   }
 
   return true;
+}
+
+
+function initializePhotosetContainer ( containerID, layout ) {
+
+  var container = document.getElementById( containerID );
+  var items, items = Array.prototype.slice.call( container.children );
+  var i, j, className;
+
+  for ( i = 0; i < layout.length; i++ ) {
+    switch ( layout[ i ]) {
+      case '2':
+        className = 'half';
+        break;
+      case '3':
+        className = 'third';
+        break;
+      default:
+        continue;
+    }
+
+    for ( j = 0; j < parseInt( layout[ i ]); j++ ) {
+      item = items[ 0 ];
+      item.classList.add( className );
+      items.shift();
+    }
+  }
 }
 
 </script>
@@ -946,7 +989,7 @@ function formatTime ( date ) {
 
   <figure class="mod-post-body photo" itemprop="articleBody">
 
-    <img class="image" src="{PhotoURL-HighRes}" alt="{PhotoAlt}" data-post-id="{PostID}" data-blog-id="{Name}" onclick="openImage(this, event, true)">
+    <img class="image" src="{PhotoURL-HighRes}" alt="{PhotoAlt}" data-post-id="{PostID}" data-blog-id="{Name}" onclick="openImage(this, event, null, true)">
 
     <figcaption class="caption">{block:Caption}{Caption}{/block:Caption}{block:HasTags}
 
@@ -1000,9 +1043,15 @@ function formatTime ( date ) {
 <div class="mod-post media" id="post-{PostID}">
 
   <figure class="mod-post-body photoset" itemprop="articleBody">
+    <ul class="image-list" id="image-list-{PostID}">
 
-    {Photoset}
+      {block:Photos}
+        <li class="image-container">
+          <img class="image" src="{PhotoURL-HighRes}" alt="{PhotoAlt}" data-photo-width-highres="{PhotoWidth-HighRes}" data-photo-height-highres="{PhotoHeight-HighRes}" data-photo-url-highres="{PhotoURL-HighRes}" data-photo-url-lowres="{PhotoURL-250}" onclick="openImage(this, event, 'image-list-{PostID}')">
+        </li>
+      {/block:Photos}
 
+    </ul>
     <figcaption class="caption">{block:Caption}{Caption}{/block:Caption}{block:HasTags}
 
   <ul class="mod-tags">
@@ -1016,10 +1065,13 @@ function formatTime ( date ) {
   </ul>
 
 {/block:HasTags}</figcaption>
-
   </figure>
 
 </div>
+
+<script>
+  initializePhotosetContainer( 'image-list-{PostID}', {JSPhotosetLayout} );
+</script>
 
 {/block:Photoset}
 
