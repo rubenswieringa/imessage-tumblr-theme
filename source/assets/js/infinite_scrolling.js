@@ -25,7 +25,7 @@ var tumblrAutoPager = {
             tAP.LN = lh.slice(7);
             if (tAP.LN.slice(tAP.LN.length - 1) == "/")
                 tAP.LN = tAP.LN.slice(0, tAP.LN.length - 1);
-        } else if ("http://" + tAP.LN + "/" != lh) {
+        } else if ( window.location.href.split('://')[0] + "://" + tAP.LN + "/" != lh) {
             return;
         }
         ;var gPFncs = [];
@@ -229,7 +229,7 @@ var tumblrAutoPager = {
             if (r < d.clientHeight * 2 && tAP.rF) {
                 tAP.rF = false;
                 p++;
-                sendRequest(addNextPage, "", "GET", "http://" + tAP.LN + "/page/" + p, true);
+                sendRequest(addNextPage, "", "GET", window.location.href.split('://')[0] + "://" + tAP.LN + "/page/" + p, true);
             }
             setTimeout(arguments.callee, 200);
         }

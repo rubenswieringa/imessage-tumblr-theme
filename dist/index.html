@@ -369,7 +369,7 @@ body {
   right: -6px;
   bottom: 0;
   background-size: auto auto;
-  background-image: url(http://static.rubenswieringa.com/tumblr/imessage-pointer.svg);
+  background-image: url(//static.rubenswieringa.com/tumblr/imessage-pointer.svg);
   background-repeat: no-repeat;
 }
 .mod-post > .mod-post-body {
@@ -380,12 +380,12 @@ body {
 }
 
 /* autoprefixer: off */
-@supports ((mask-border: url(http://static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch) or (-webkit-mask-box-image: url(http://static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch)) and (-webkit-appearance: none) and (text-align-last: auto) and (not (-ms-accelerator: true)) {
+@supports ((mask-border: url(//static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch) or (-webkit-mask-box-image: url(//static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch)) and (-webkit-appearance: none) and (text-align-last: auto) and (not (-ms-accelerator: true)) {
   .mod-post {
     /* autoprefixer: on */
     border-radius: 0;
-    -webkit-mask-box-image: url(http://static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch;
-            mask-border: url(http://static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch;
+    -webkit-mask-box-image: url(//static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch;
+            mask-border: url(//static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch;
     background-image: -webkit-gradient(linear, left bottom, left top, from(#0a80f9), to(#51bffa));
     background-image: linear-gradient(to top, #0a80f9, #51bffa);
     background-attachment: fixed;
@@ -403,13 +403,13 @@ body {
     padding-right: 16px;
   }
 }
-@supports (mask-border: url(http://static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch) or (-webkit-mask-box-image: url(http://static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch) {
+@supports (mask-border: url(//static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch) or (-webkit-mask-box-image: url(//static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch) {
   _:-webkit-full-screen:not(:root:root),
   .mod-post {
     /* autoprefixer: on */
     border-radius: 0;
-    -webkit-mask-box-image: url(http://static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch;
-            mask-border: url(http://static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch;
+    -webkit-mask-box-image: url(//static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch;
+            mask-border: url(//static.rubenswieringa.com/tumblr/imessage-mask.svg) 17 23 16 17 stretch;
     background-image: -webkit-gradient(linear, left bottom, left top, from(#0a80f9), to(#51bffa));
     background-image: linear-gradient(to top, #0a80f9, #51bffa);
     background-attachment: fixed;
@@ -1253,7 +1253,7 @@ var tumblrAutoPager = {
             tAP.LN = lh.slice(7);
             if (tAP.LN.slice(tAP.LN.length - 1) == "/")
                 tAP.LN = tAP.LN.slice(0, tAP.LN.length - 1);
-        } else if ("http://" + tAP.LN + "/" != lh) {
+        } else if ( window.location.href.split('://')[0] + "://" + tAP.LN + "/" != lh) {
             return;
         }
         ;var gPFncs = [];
@@ -1457,7 +1457,7 @@ var tumblrAutoPager = {
             if (r < d.clientHeight * 2 && tAP.rF) {
                 tAP.rF = false;
                 p++;
-                sendRequest(addNextPage, "", "GET", "http://" + tAP.LN + "/page/" + p, true);
+                sendRequest(addNextPage, "", "GET", window.location.href.split('://')[0] + "://" + tAP.LN + "/page/" + p, true);
             }
             setTimeout(arguments.callee, 200);
         }
