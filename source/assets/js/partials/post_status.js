@@ -25,6 +25,8 @@
     status = 'Read <small>' + time + '</small>';
   }
 
-  document.write( status );
+  if ( document.readyState === 'loading' ) {
+    document.write( status );
+  }
 
 })();

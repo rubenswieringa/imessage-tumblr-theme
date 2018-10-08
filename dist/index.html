@@ -1215,7 +1215,9 @@ function formatTime ( date ) {
     status = 'Read <small>' + time + '</small>';
   }
 
-  document.write( status );
+  if ( document.readyState === 'loading' ) {
+    document.write( status );
+  }
 
 })();
 </script></p>
@@ -1443,12 +1445,30 @@ var tumblrAutoPager = {
             d = document.createElement("div");
             d.className = "tumblrAutoPager_page_info";
             tAP.pp.appendChild(d);
+            var child, scripts, j;
             for (var i = 0; i < posts.length; i++) {
-                tAP.pp.appendChild(posts[i]);
+                child = posts[i];
+                if (child.nodeName.toLowerCase() == "script") {
+                    child = cloneScriptNode(child);
+                } else if (child.nodeType === Node.ELEMENT_NODE) {
+                    scripts = child.querySelectorAll('script');
+                    for (j = 0; j < scripts.length; j++) {
+                        cloneScriptNode( scripts[j], true );
+                    }
+                }
+                tAP.pp.appendChild(child);
             }
             var footer = $("footer");
             footer ? footer.parentNode.appendChild(footer) : null;
             tAP.rF = true;
+        }
+        function cloneScriptNode(original, replace){
+            var clone = document.createElement("script");
+            clone.type  = "text/javascript";
+            if (original.src)  clone.src  = original.src;
+            if (original.text) clone.text = original.text;
+            if (replace === true && original.parentElement) clone = original.parentElement.replaceChild(clone, original);
+            return clone;
         }
         watch_scroll();
         function watch_scroll() {
